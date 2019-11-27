@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <form action="{% url 'analise:analise_update' pk %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <br>
+        <button class="pure-button pure-button-primary" type="submit" name="button">Enviar</button>
+        <a class="pure-button pure-button-primary" href="{% url 'analise:analise_list' %}"> Voltar </a>
+    </form>
+    <br>
+{% endblock %}

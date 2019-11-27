@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<a class="pure-button pure-button-primary" href="{% url 'notaSaida:notaSaidaNew' %}">Novo</a>
+<br>
+<br>
+<table  class="pure-table pure-table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+                <th>Data de Saída</th>
+                <th>Cidade</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in nota_saida %}
+                <tr>
+                    <td>{{nota.id}}</td>
+                    <td>{{nota.saida_produto}}</td>
+                    <td>{{nota.saida_quant}}</td>
+                    <td>{{nota.saida_valor}}</td>
+                    <td>{{nota.saida_data|date:"SHORT_DATE_FORMAT"}}</td>
+                    <td>{{nota.saida_cidade}}</td>
+                    <td align="center" ><a class="pure-button pure-button-primary" href="{% url 'notaSaida:notaSaidaDelete' nota.id %}">x</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

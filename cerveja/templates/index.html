@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <a class="pure-button pure-button-primary" href="{% url 'produto_novo' %}">Entrada de Lote</a>
+    <a class="pure-button pure-button-primary" href="{% url 'produto_lista' %}">Listar Produtos</a>
+    <a class="pure-button pure-button-primary" href="{% url 'analise:analise_list' %}">Análise de Produtos</a>
+    <a class="pure-button pure-button-primary" href="{% url 'notaSaida:notaSaidaList'%}">Nota de Saída</a>
+    
+
+    <br>
+    <br>
+                    
+            {% endblock %} 
